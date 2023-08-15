@@ -1,4 +1,4 @@
-export const runtime = 'edge';
+export const runtime = "edge";
 
 async function getData() {
   const res = await fetch(
@@ -14,5 +14,5 @@ async function getData() {
 export default async function Home() {
   const games = (await getData()) as any[];
 
-  return <pre>{JSON.stringify(games)}</pre>;
+  return <pre>{JSON.stringify(games || null, null, 4)}</pre>;
 }
